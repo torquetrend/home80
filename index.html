@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TorqueTrend</title>
+    <!-- Font Awesome for Icons -->
+       <!-- Icons (Font Awesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Scripts -->
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <script src="scripts.js" defer></script>
+</head>
+  
+<body>
+  
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#home" aria-label="TorqueTrend Home">
+                    <h1>TorqueTrend</h1>
+                </a>
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="nav-menu" aria-label="Primary Navigation">
+                <ul>
+                    <li><a href="#home" aria-label="Home">Home</a></li>
+                    <li><a href="#latest-news" aria-label="Latest News">Latest News</a></li>
+                    <li><a href="#reviews" aria-label="Reviews">Reviews</a></li>
+                    <li><a href="#rankings" aria-label="Rankings">Rankings</a></li>
+                    <li><a href="#car-chatbot" aria-label="Car Chatbot">Chatbot</a></li>
+                    <li><a href="#contact" aria-label="Contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Search Bar for Desktop -->
+            <div class="search-bar">
+                <form role="search" aria-label="Site Search">
+                    <input type="search" id="search-bar" name="search" placeholder="Search articles..." aria-label="Search">
+                    <button type="submit" aria-label="Search Button"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+
+            <!-- Hamburger Menu Icon for Mobile -->
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Open Menu" aria-expanded="false" aria-controls="sidebar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Sidebar for Mobile -->
+    <aside id="sidebar" class="sidebar" aria-hidden="true">
+        <div class="sidebar-nav">
+            <ul>
+                <li><a href="#home" aria-label="Home">Home</a></li>
+                <li><a href="#latest-news" aria-label="Latest News">Latest News</a></li>
+                <li><a href="#reviews" aria-label="Reviews">Reviews</a></li>
+                <li><a href="#rankings" aria-label="Rankings">Rankings</a></li>
+                <li><a href="#recommendations" aria-label="Recommendations">Recommendations</a></li>
+                <li><a href="#car-chatbot" aria-label="Car Chatbot">Chatbot</a></li>
+                <li><a href="#newsletter" aria-label="Newsletter">Newsletter</a></li>
+                <li><a href="#contact" aria-label="Contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-search">
+            <form role="search" aria-label="Mobile Search">
+                <input type="search" id="sidebar-search-bar" name="search" placeholder="Search articles..." aria-label="Search">
+                <button type="submit" aria-label="Search Button"><i class="fas fa-search"></i></button>
+            </form>
+        </div>
+    </aside>
+
+    <!-- Overlay for Sidebar -->
+    <div id="sidebar-overlay" tabindex="-1" aria-hidden="true"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section" aria-labelledby="hero-heading">
+            <!-- Video Background -->
+            <video class="background-video" autoplay muted loop playsinline>
+              <source src="f40-vid.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+
+            <!-- Hero Overlay -->
+            <div class="hero-overlay">
+                 <div class="hero-content">
+                    <h1 id="hero-heading">Revolutionizing Automotive Tech</h1>
+                    <p>Explore the future of automotive technology with the latest news, reviews, and insights.</p>
+                    <a href="#latest-news" class="btn-primary" aria-label="Explore Latest News">Explore Latest News <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News Section -->
+        <section id="latest-news" class="latest-news-section" aria-labelledby="latest-news-heading">
+            <div class="container">
+                <h2 id="latest-news-heading">Latest News</h2>
+                <div class="carousel-3d" aria-label="Latest Articles Carousel">
+                    <div class="carousel-slide active" data-index="0">
+                        <div class="article-card">
+                            <img src="car charging.jpg" alt="Age of Electric Vehicles" loading="lazy">
+                            <div class="article-content">
+                                <h3>Age of Electric Vehicles</h3>
+                                <p>How electric vehicles are reshaping the automotive industry.</p>
+                                <a href="#" class="btn-secondary" onclick="savePreference('article1')" aria-label="Read More about Electric Vehicles">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide" data-index="1">
+                        <div class="article-card">
+                            <img src="waymo.jpg" alt="Autonomous Drivers?" loading="lazy">
+                            <div class="article-content">
+                                <h3>Autonomous Drivers?</h3>
+                                <p>Our world with fully self-driving cars.</p>
+                                <a href="#" class="btn-secondary" onclick="savePreference('article2')" aria-label="Read More about Autonomous Driving">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-slide" data-index="2">
+                        <div class="article-card">
+                            <img src="lithium-mine.jpg" alt="Sustainable Critical Materials" loading="lazy">
+                            <div class="article-content">
+                                <h3>Sustainable Critical Materials</h3>
+                                <p>Exploring the impacts of critical materials and our daily driving needs.</p>
+                                <a href="#" class="btn-secondary" onclick="savePreference('article3')" aria-label="Read More about Sustainable Critical Materials">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Navigation -->
+                    <button class="carousel-nav prev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-nav next" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Reviews Section -->
+        <section id="reviews" class="featured-reviews-section" aria-labelledby="reviews-heading">
+            <div class="container">
+                <h2 id="reviews-heading">Featured Reviews</h2>
+                <div class="reviews-slider">
+                    <article class="review-card">
+                        <img src="model-s.jpg" alt="Tesla Model S Review" loading="lazy">
+                        <div class="review-content">
+                            <h3>Tesla Model S Review</h3>
+                            <p>An in-depth look at Tesla's flagship sedan, exploring its performance, technology, and design.</p>
+                            <a href="#" class="btn-secondary" aria-label="Read Tesla Model S Review">Read Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="review-card">
+                        <img src="M5.jpg" alt="BMW M5 Review" loading="lazy">
+                        <div class="review-content">
+                            <h3>BMW M5 Review</h3>
+                            <p>Examining the blend of luxury and sustainability in BMW's heaviest sedan ever made.</p>
+                            <a href="#" class="btn-secondary" aria-label="Read BMW M5 Review">Read Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="review-card">
+                        <img src="eg80.jpg" alt="Genesis Electrified G80" loading="lazy">
+                        <div class="review-content">
+                            <h3>Genesis Electrified G80 Review</h3>
+                            <p>Assessing the brilliance and performance of Genesis' flagship sedan.</p>
+                            <a href="#" class="btn-secondary" aria-label="Read Genesis Electrified G80 Review">Read Review <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Rankings Section -->
+        <section id="rankings" class="top-rankings-section" aria-labelledby="rankings-heading">
+            <div class="container">
+                <h2 id="rankings-heading">Top Vehicle Rankings</h2>
+                <div class="rankings-grid">
+                    <div class="ranking-card">
+                        <h3>Best SUVs of 2024</h3>
+                        <ol>
+                            <li><strong>1. Tesla Model X</strong></li>
+                            <li>2. Alfa Romeo Stelvio</li>
+                            <li>3. Ford Bronco Raptor</li>
+                        </ol>
+                        <a href="#" class="btn-secondary" aria-label="View Full List of Best SUVs">View Full List <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="ranking-card">
+                        <h3>Best Sedans of 2024</h3>
+                        <ol>
+                            <li><strong>1. Alfa Romeo Giulia</strong></li>
+                            <li>2. Tesla Model 3</li>
+                            <li>3. BMW 3 Series</li>
+                        </ol>
+                        <a href="#" class="btn-secondary" aria-label="View Full List of Best Sedans">View Full List <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="ranking-card">
+                        <h3>Top Sports Cars</h3>
+                        <ol>
+                            <li><strong>1. Porsche 911 GT3RS</strong></li>
+                            <li>2. Chevrolet Corvette Z06 (C8)</li>
+                            <li>3. Aston Martin Vantage</li>
+                        </ol>
+                        <a href="#" class="btn-secondary" aria-label="View Full List of Top Sports Cars">View Full List <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personalized Recommendations Section -->
+        <section id="recommendations" class="recommendations-section" aria-labelledby="recommendations-heading">
+            <div class="container">
+                <h2 id="recommendations-heading">Recommended for You</h2>
+                <div id="recommended-articles" class="articles-grid">
+                    <!-- Recommended articles will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Car Chatbot Section -->
+        <section id="car-chatbot" class="car-chatbot-section" aria-labelledby="car-chatbot-heading">
+            <div class="container">
+                <h2 id="car-chatbot-heading">Car Chatbot</h2>
+                <p>Need assistance? Our Car Chatbot is here to help you find the perfect vehicle.</p>
+                <div class="chatbot-container">
+                    <!-- Chatbot interface will be embedded here -->
+                    <!-- Example: <iframe src="your-chatbot-url" title="Car Chatbot" width="100%" height="100%" frameborder="0"></iframe> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Subscription Section -->
+        <section id="newsletter" class="newsletter-section" aria-labelledby="newsletter-heading">
+            <div class="container">
+                <h2 id="newsletter-heading">Subscribe to Our Newsletter</h2>
+                <p>Stay updated with the latest automotive news, reviews, and exclusive offers.</p>
+                <form id="newsletter-form" class="newsletter-form" aria-label="Newsletter Subscription">
+                    <input type="email" id="newsletter-email" name="email" placeholder="Enter your email" aria-label="Email Address" required>
+                    <button type="submit" class="btn-secondary" aria-label="Subscribe">Subscribe <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Contact Section with Modal Form -->
+        <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+            <div class="container">
+                <h2 id="contact-heading">Get in Touch</h2>
+                <p>Have questions or want to advertise with us? Reach out to our team!</p>
+                <button class="modal-btn-primary" aria-haspopup="dialog" aria-controls="modal" aria-label="Open Contact Form">Contact Us <i class="fas fa-envelope"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Form Modal -->
+    <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+        <div class="modal-content">
+            <button class="close-button" aria-label="Close Contact Form">&times;</button>
+            <h2 id="modal-heading">Contact Us</h2>
+            <form id="contact-form" novalidate>
+                <div class="form-group">
+                    <label for="contact-name" class="visually-hidden">Your Name</label>
+                    <input type="text" id="contact-name" name="name" placeholder="Your Name" required aria-required="true" aria-label="Your Name">
+                    <div class="error-message" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email" class="visually-hidden">Your Email</label>
+                    <input type="email" id="contact-email" name="email" placeholder="Your Email" required aria-required="true" aria-label="Your Email">
+                    <div class="error-message" aria-live="polite"></div>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message" class="visually-hidden">Your Message</label>
+                    <textarea id="contact-message" name="message" placeholder="Your Message" required aria-required="true" aria-label="Your Message"></textarea>
+                    <div class="error-message" aria-live="polite"></div>
+                </div>
+                <button type="submit" class="btn-secondary" aria-label="Send Message">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Newsletter Success Modal -->
+    <div id="newsletter-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="newsletter-modal-heading">
+        <div class="modal-content">
+            <button class="close-button" aria-label="Close Newsletter Modal">&times;</button>
+            <h2 id="newsletter-modal-heading">Subscription Successful!</h2>
+            <p>Thank you for subscribing to our newsletter. You'll receive the latest updates straight to your inbox.</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer" aria-labelledby="footer-heading">
+        <div class="container">
+            <div class="footer-column">
+                <h4>About Us</h4>
+                <p>TorqueTrend is your trusted source for automotive news, reviews, and rankings. Stay updated with the latest trends and insights in the automotive industry.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#home" aria-label="Go to Home">Home</a></li>
+                    <li><a href="#latest-news" aria-label="Go to Latest News">Latest News</a></li>
+                    <li><a href="#reviews" aria-label="Go to Reviews">Reviews</a></li>
+                    <li><a href="#rankings" aria-label="Go to Rankings">Rankings</a></li>
+                    <li><a href="#recommendations" aria-label="Go to Recommendations">Recommendations</a></li>
+                    <li><a href="#car-chatbot" aria-label="Go to Car Chatbot">Chatbot</a></li>
+                    <li><a href="#newsletter" aria-label="Go to Newsletter">Newsletter</a></li>
+                    <li><a href="#contact" aria-label="Go to Contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column footer-social">
+                <h4>Connect</h4>
+                <div class="social-icons">
+                    <a href="https://facebook.com" aria-label="Facebook" target="_blank" rel="noopener"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a href="https://x.com" aria-label="X" target="_blank" rel="noopener"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a href="https://instagram.com" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 TorqueTrend, LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Placeholder for search results -->
+    <div id="search-results" aria-live="polite" aria-atomic="true" class="container" style="padding: var(--spacing-md);"></div>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(reg => console.log('Service Worker registered'))
+                    .catch(err => console.error('Service Worker registration failed:', err));
+            });
+        }
+    </script>
+</body>
+
+</html>
